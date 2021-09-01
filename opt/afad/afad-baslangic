@@ -1,0 +1,13 @@
+#!/bin/bash
+conf_file1=$(less $HOME/.config/gtk-3.0/bookmarks |grep Belgeler | wc -l)
+if [ "$conf_file1" == "0" ] ; then
+/opt/afad/afad-bookmarks.sh
+else 
+echo ok
+fi
+conf_file2=$(ls $HOME/Masaüstü/ |grep Paylaşım | wc -l)
+if [ "$conf_file2" == "0" ] ; then
+ln -s /home/paylas $HOME/Masaüstü/Paylaşım
+else 
+echo ok
+fi

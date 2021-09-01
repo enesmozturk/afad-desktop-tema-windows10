@@ -1,0 +1,87 @@
+#!/bin/bash
+###########Görümün ayarı için###############################
+sed -i 's+<property name="ThemeName" type="string" value=.*/>+<property name="ThemeName" type="string" value="Windows-10-master"/>+g' /etc/xdg/pardus/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+sed -i 's+<property name="IconThemeName" type="string" value=.*/>+<property name="IconThemeName" type="string" value="Windows-10-master"/>+g' /etc/xdg/pardus/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+sed -i 's+<property name="FontName" type="string" value=.*/>+<property name="FontName" type="string" value="Segoe UI 10"/>+g' /etc/xdg/pardus/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+
+###########Pencere ayarı için###############################
+cp -r /opt/afad-desktop-tema/xfwm4.xml  /etc/xdg/pardus/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
+###########Var olan kullanıcı ayarı için###############################
+find /home -type f -name "xsettings.xml" -print0 | xargs -0 sed -i 's+<property name="ThemeName" type="string" value=.*/>+<property name="ThemeName" type="string" value="Windows-10-master"/>+g'
+find /home -type f -name "xsettings.xml" -print0 | xargs -0 sed -i 's+<property name="IconThemeName" type="string" value=.*/>+<property name="IconThemeName" type="string" value="Windows-10-master"/>+g'
+find /home -type f -name "xsettings.xml" -print0 | xargs -0 sed -i 's+<property name="FontName" type="string" value=.*/>+<property name="FontName" type="string" value="Segoe UI 10"/>+g'
+
+find /home -type f -name "xfwm4.xml" -print0 | xargs -0 sed -i 's+<property name="theme" type="string" value=.*/>+<property name="theme" type="string" value="Windows-10-master"/>+g'
+find /home -type f -name "xfwm4.xml" -print0 | xargs -0 sed -i 's+<property name="title_alignment" type="string" value=".*"/>+<property name="title_alignment" type="string" value="left"/>+g'
+find /home -type f -name "xfwm4.xml" -print0 | xargs -0 sed -i 's+<property name="title_font" type="string" value=.*/>+<property name="title_font" type="string" value="Segoe UI 12"/>+g'
+
+###########whiskermenu ayarı için###############################
+cp -r /opt/afad-desktop-tema/defaults.rc /etc/xdg/pardus/xfce4/whiskermenu/defaults.rc
+#sed -i 's+button-title=.*+button-title=AFAD+g' /etc/xdg/pardus/xfce4/whiskermenu/defaults.rc
+#sed -i 's+button-icon=.*+button-icon=emblem-pardus-white+g' /etc/xdg/pardus/xfce4/whiskermenu/defaults.rc
+#sed -i 's+show-button-title=.*+show-button-title=true+g' /etc/xdg/pardus/xfce4/whiskermenu/defaults.rc
+#sed -i 's+show-button-icon=.*+show-button-icon=true+g' /etc/xdg/pardus/xfce4/whiskermenu/defaults.rc
+
+###########Var olan kullanıcı ayarı için###############################
+find /home -type f -name "whiskermenu-2.rc" -print0 | xargs -0 sed -i 's+button-title=.*+button-title=AFAD+g'
+find /home -type f -name "whiskermenu-2.rc" -print0 | xargs -0 sed -i 's+button-icon=.*+button-icon=emblem-pardus-white+g'
+find /home -type f -name "whiskermenu-2.rc" -print0 | xargs -0 sed -i 's+show-button-icon=.*+show-button-icon=true+g'
+find /home -type f -name "whiskermenu-2.rc" -print0 | xargs -0 sed -i 's+show-button-title=.*+show-button-title=true+g'
+find /home -type f -name "whiskermenu-2.rc" -print0 | xargs -0 sed -i 's+show-command-restart=.*+show-command-restart=true+g'
+find /home -type f -name "whiskermenu-2.rc" -print0 | xargs -0 sed -i 's+show-command-switchuser=.*+show-command-switchuser=true+g'
+find /home -type f -name "whiskermenu-2.rc" -print0 | xargs -0 sed -i 's+show-command-shutdown=.*+show-command-shutdown=true+g'
+
+
+###########Panel ayarı için###############################
+cp /opt/afad-desktop-tema/xfce4-panel.xml /etc/xdg/pardus/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
+cp /opt/afad-desktop-tema/datetime-8.rc /etc/xdg/pardus/xfce4/panel/datetime-8.rc
+cp /opt/afad-desktop-tema/fsguard-23.rc /etc/xdg/pardus/xfce4/panel/fsguard-23.rc
+cp /opt/afad-desktop-tema/genmon-22.rc /etc/xdg/pardus/xfce4/panel/genmon-22.rc
+
+###########Var olan kullanıcı ayarı için###############################
+find /home -type f -name "xfce4-panel.xml" -exec cp /etc/xdg/pardus/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml "{}" \;
+find /home -type f -name "datetime-8.rc" -exec cp /etc/xdg/pardus/xfce4/panel/datetime-8.rc "{}" \;
+find /home -type f -name "genmon-22.rc" -exec cp /etc/xdg/pardus/xfce4/panel/genmon-22.rc "{}" \;
+find /home -type f -name "fsguard-23.rc" -exec cp /etc/xdg/pardus/xfce4/panel/fsguard-23.rc "{}" \;
+cd /opt/afad-desktop-tema
+tar -xzf Windows-10-master.tar.gz
+cp -r Windows-10-master /usr/share/icons/
+unzip Windows-10-master.zip -d /usr/share/themes/
+
+
+###################Skell içine Masaüstü ve Şablonları ayarlama #########
+chmod 777 /etc/skel/Masaüstü/*
+mkdir -p /home/paylas
+chmod 777 /home/paylas
+
+#rm -r /etc/skel/Masaüstü/libreoffice*.desktop
+#rm -r /etc/skel/Masaüstü/exo-file-manager.desktop
+find /home -type d -name "Masaüstü" -exec cp -r /etc/skel/Masaüstü/*.desktop "{}" \;
+#cp -r /etc/skel/Masaüstü/*.desktop /home/*/Masaüstü/
+#cp -r /etc/skel/Masaüstü/*.desktop /home/*/*/Masaüstü/
+chmod 777 /home/*/Masaüstü/*.desktop
+chmod 777 /home/*/*/Masaüstü/*.desktop
+rm /home/*/Şablonlar/*.*
+rm /home/*/*/Şablonlar/*.*
+find /home -type d -name "Şablonlar" -exec cp -r /etc/skel/Şablonlar/*.* "{}" \;
+#cp -r /etc/skel/Şablonlar/*.* /home/*/Şablonlar/
+#cp -r /etc/skel/Şablonlar/*.* /home/*/*/Şablonlar/
+
+##########bookmark ayarı-######
+##########bookmark ayarı- yeni kullacılar için başlangıca script yazdık#########
+##########bookmark ayarı-var olan kullancılar için#####################################
+#rm -r /home/*/.config/gtk-3.0/bookmarks
+#rm -r /home/*/*/.config/gtk-3.0/bookmarks
+
+
+###########afad script izinleri########
+chmod 777 /opt/afad
+chmod 777 /opt/afad/afad*
+chmod 777 /etc/xdg/autostart/afad-baslangic.desktop
+
+
+##############burada terminal aç icon değişimi#########
+sed -i 's+<icon>Terminal</icon>+<icon>utilities-terminal</icon>+g' /etc/xdg/pardus/Thunar/uca.xml
+
+
+cd /tmp
