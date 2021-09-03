@@ -54,6 +54,7 @@
       </property>
       <property name="enter-opacity" type="uint" value="100"/>
     </property>
+    <property name="dark-mode" type="bool" value="true"/>
   </property>
   <property name="plugins" type="empty">
     <property name="plugin-1" type="string" value="systray">
@@ -148,7 +149,7 @@
     <property name="plugin-23" type="string" value="fsguard"/>
     <property name="plugin-18" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="pardus-about.desktop"/>
+        <value type="string" value="tr.org.pardus.about.desktop"/>
       </property>
     </property>
   </property>																  

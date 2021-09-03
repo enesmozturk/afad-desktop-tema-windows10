@@ -1,13 +1,13 @@
 #!/bin/bash
 ###########Görümün ayarı için###############################
-sed -i 's+<property name="ThemeName" type="string" value=.*/>+<property name="ThemeName" type="string" value="Windows-10-master"/>+g' /etc/xdg/pardus/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+sed -i 's+<property name="ThemeName" type="string" value=.*/>+<property name="ThemeName" type="string" value="pardus"/>+g' /etc/xdg/pardus/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
 sed -i 's+<property name="IconThemeName" type="string" value=.*/>+<property name="IconThemeName" type="string" value="Windows-10-master"/>+g' /etc/xdg/pardus/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
 sed -i 's+<property name="FontName" type="string" value=.*/>+<property name="FontName" type="string" value="Segoe UI 10"/>+g' /etc/xdg/pardus/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
 
 ###########Pencere ayarı için###############################
 cp -r /opt/afad-desktop-tema/xfwm4.xml  /etc/xdg/pardus/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
 ###########Var olan kullanıcı ayarı için###############################
-find /home -type f -name "xsettings.xml" -print0 | xargs -0 sed -i 's+<property name="ThemeName" type="string" value=.*/>+<property name="ThemeName" type="string" value="Windows-10-master"/>+g'
+find /home -type f -name "xsettings.xml" -print0 | xargs -0 sed -i 's+<property name="ThemeName" type="string" value=.*/>+<property name="ThemeName" type="string" value="pardus"/>+g'
 find /home -type f -name "xsettings.xml" -print0 | xargs -0 sed -i 's+<property name="IconThemeName" type="string" value=.*/>+<property name="IconThemeName" type="string" value="Windows-10-master"/>+g'
 find /home -type f -name "xsettings.xml" -print0 | xargs -0 sed -i 's+<property name="FontName" type="string" value=.*/>+<property name="FontName" type="string" value="Segoe UI 10"/>+g'
 
@@ -46,6 +46,7 @@ find /home -type f -name "fsguard-23.rc" -exec cp /etc/xdg/pardus/xfce4/panel/fs
 cd /opt/afad-desktop-tema
 tar -xzf Windows-10-master.tar.gz
 cp -r Windows-10-master /usr/share/icons/
+rm -r /usr/share/themes/Windows-10-master
 unzip Windows-10-master.zip -d /usr/share/themes/
 
 
