@@ -84,5 +84,8 @@ chmod 777 /etc/xdg/autostart/afad-baslangic.desktop
 ##############burada terminal aç icon değişimi#########
 sed -i 's+<icon>Terminal</icon>+<icon>utilities-terminal</icon>+g' /etc/xdg/pardus/Thunar/uca.xml
 
+gtk-update-icon-cache /usr/share/icons/Windows-10-master/
+
+cp /usr/share/images/desktop-base/* /usr/share/backgrounds/
 
 cd /tmp
