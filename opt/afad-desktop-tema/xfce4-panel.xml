@@ -3,8 +3,7 @@
 <channel name="xfce4-panel" version="1.0">
   <property name="configver" type="int" value="2"/>
   <property name="panels" type="array">
-    <value type="int" value="1"/>
-	<value type="int" value="2"/>							 
+  <value type="int" value="1"/>						 
     <property name="panel-1" type="empty">
       <property name="position" type="string" value="p=8;x=96;y=1055"/>
       <property name="position-locked" type="bool" value="true"/>
@@ -25,7 +24,7 @@
         <value type="int" value="1"/>
         <value type="int" value="8"/>
         <value type="int" value="4"/>
-		<value type="int" value="13"/>
+		    <value type="int" value="13"/>
       </property>
     </property>
 	<property name="panel-2" type="empty">

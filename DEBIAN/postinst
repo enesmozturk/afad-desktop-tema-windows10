@@ -11,7 +11,7 @@ find /home -type f -name "xsettings.xml" -print0 | xargs -0 sed -i 's+<property 
 find /home -type f -name "xsettings.xml" -print0 | xargs -0 sed -i 's+<property name="IconThemeName" type="string" value=.*/>+<property name="IconThemeName" type="string" value="Windows-10-master"/>+g'
 find /home -type f -name "xsettings.xml" -print0 | xargs -0 sed -i 's+<property name="FontName" type="string" value=.*/>+<property name="FontName" type="string" value="Segoe UI 10"/>+g'
 
-find /home -type f -name "xfwm4.xml" -print0 | xargs -0 sed -i 's+<property name="theme" type="string" value=.*/>+<property name="theme" type="string" value="Windows-10-master"/>+g'
+find /home -type f -name "xfwm4.xml" -print0 | xargs -0 sed -i 's+<property name="theme" type="string" value=.*/>+<property name="theme" type="string" value="pardus-default"/>+g'
 find /home -type f -name "xfwm4.xml" -print0 | xargs -0 sed -i 's+<property name="title_alignment" type="string" value=".*"/>+<property name="title_alignment" type="string" value="left"/>+g'
 find /home -type f -name "xfwm4.xml" -print0 | xargs -0 sed -i 's+<property name="title_font" type="string" value=.*/>+<property name="title_font" type="string" value="Segoe UI 12"/>+g'
 
