@@ -1,4 +1,4 @@
-favorites=exo-web-browser.desktop,exo-mail-reader.desktop,pcmanfm.desktop,libreoffice7.1-writer.desktop,libreoffice7.1-calc.desktop,google-earth-pro.desktop,galculator.desktop,xfce4-screenshooter.desktop,exo-terminal-emulator.desktop,audacious.desktop,gnome-system-monitor.desktop
+favorites=exo-web-browser.desktop,exo-mail-reader.desktop,pcmanfm.desktop,xfce4-screenshooter.desktop,exo-terminal-emulator.desktop,org.gnome.Calculator.desktop,audacious.desktop,tr.org.pardus.welcome.desktop,tr.org.pardus.software.desktop
 button-title=AFAD
 button-icon=emblem-pardus-white
 show-button-title=true
@@ -12,6 +12,7 @@ hover-switch-category=false
 favorites-in-recent=true
 display-recent-default=false
 position-search-alternate=true
+menu-opacity=75
 command-switchuser=dm-tool switch-to-greeter
 show-command-switchuser=true
 command-settings=xfce4-settings-manager

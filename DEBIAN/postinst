@@ -23,13 +23,13 @@ cp -r /opt/afad-desktop-tema/defaults.rc /etc/xdg/pardus/xfce4/whiskermenu/defau
 #sed -i 's+show-button-icon=.*+show-button-icon=true+g' /etc/xdg/pardus/xfce4/whiskermenu/defaults.rc
 
 ###########Var olan kullanıcı ayarı için###############################
-find /home -type f -name "whiskermenu-2.rc" -print0 | xargs -0 sed -i 's+button-title=.*+button-title=AFAD+g'
-find /home -type f -name "whiskermenu-2.rc" -print0 | xargs -0 sed -i 's+button-icon=.*+button-icon=emblem-pardus-white+g'
-find /home -type f -name "whiskermenu-2.rc" -print0 | xargs -0 sed -i 's+show-button-icon=.*+show-button-icon=true+g'
-find /home -type f -name "whiskermenu-2.rc" -print0 | xargs -0 sed -i 's+show-button-title=.*+show-button-title=true+g'
-find /home -type f -name "whiskermenu-2.rc" -print0 | xargs -0 sed -i 's+show-command-restart=.*+show-command-restart=true+g'
-find /home -type f -name "whiskermenu-2.rc" -print0 | xargs -0 sed -i 's+show-command-switchuser=.*+show-command-switchuser=true+g'
-find /home -type f -name "whiskermenu-2.rc" -print0 | xargs -0 sed -i 's+show-command-shutdown=.*+show-command-shutdown=true+g'
+#find /home -type f -name "whiskermenu-2.rc" -print0 | xargs -0 sed -i 's+button-title=.*+button-title=AFAD+g'
+#find /home -type f -name "whiskermenu-2.rc" -print0 | xargs -0 sed -i 's+button-icon=.*+button-icon=emblem-pardus-white+g'
+#find /home -type f -name "whiskermenu-2.rc" -print0 | xargs -0 sed -i 's+show-button-icon=.*+show-button-icon=true+g'
+#find /home -type f -name "whiskermenu-2.rc" -print0 | xargs -0 sed -i 's+show-button-title=.*+show-button-title=true+g'
+#find /home -type f -name "whiskermenu-2.rc" -print0 | xargs -0 sed -i 's+show-command-restart=.*+show-command-restart=true+g'
+#find /home -type f -name "whiskermenu-2.rc" -print0 | xargs -0 sed -i 's+show-command-switchuser=.*+show-command-switchuser=true+g'
+#find /home -type f -name "whiskermenu-2.rc" -print0 | xargs -0 sed -i 's+show-command-shutdown=.*+show-command-shutdown=true+g'
 
 
 ###########Panel ayarı için###############################
@@ -40,14 +40,17 @@ cp /opt/afad-desktop-tema/genmon-22.rc /etc/xdg/pardus/xfce4/panel/genmon-22.rc
 
 ###########Var olan kullanıcı ayarı için###############################
 find /home -type f -name "xfce4-panel.xml" -exec cp /etc/xdg/pardus/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml "{}" \;
+find /home -type f -name "whiskermenu-2.rc" -exec cp /etc/xdg/pardus/xfce4/whiskermenu/defaults.rc "{}" \;
 find /home -type f -name "datetime-8.rc" -exec cp /etc/xdg/pardus/xfce4/panel/datetime-8.rc "{}" \;
 find /home -type f -name "genmon-22.rc" -exec cp /etc/xdg/pardus/xfce4/panel/genmon-22.rc "{}" \;
 find /home -type f -name "fsguard-23.rc" -exec cp /etc/xdg/pardus/xfce4/panel/fsguard-23.rc "{}" \;
 cd /opt/afad-desktop-tema
-tar -xzf Windows-10-master.tar.gz
-cp -r Windows-10-master /usr/share/icons/
+#tar -xzf Windows-10-master.tar.gz
+#cp -r Windows-10-master /usr/share/icons/
 rm -r /usr/share/themes/Windows-10-master
-unzip Windows-10-master.zip -d /usr/share/themes/
+#unzip Windows-10-master.zip -d /usr/share/themes/
+tar -xzf Windows-10-master-icons.tar.gz -C /usr/share/icons/
+tar -xzf Windows-10-master-themes.tar.gz -C /usr/share/themes/
 
 
 ###################Skell içine Masaüstü ve Şablonları ayarlama #########
