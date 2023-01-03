@@ -61,6 +61,9 @@ chmod 777 /home/paylas
 #rm -r /etc/skel/Masaüstü/libreoffice*.desktop
 #rm -r /etc/skel/Masaüstü/exo-file-manager.desktop
 find /home -type d -name "Masaüstü" -exec cp -r /etc/skel/Masaüstü/*.desktop "{}" \;
+#find /home -type d -name "Masaüstü" -exec rm  "{}"/computer.desktop \;
+find /home -type f -name "computer.desktop" -exec rm  "{}" \;
+rm /etc/skel/Masaüstü/computer.desktop
 #cp -r /etc/skel/Masaüstü/*.desktop /home/*/Masaüstü/
 #cp -r /etc/skel/Masaüstü/*.desktop /home/*/*/Masaüstü/
 chmod 777 /home/*/Masaüstü/*.desktop
@@ -86,7 +89,7 @@ chmod 777 /etc/xdg/autostart/afad-baslangic.desktop
 
 ##############burada terminal aç icon değişimi#########
 sed -i 's+<icon>Terminal</icon>+<icon>utilities-terminal</icon>+g' /etc/xdg/pardus/Thunar/uca.xml
-
+cp /usr/share/icons/Windows-10-master/48x48/devices/computer.png /usr/share/icons/Windows-10-master/48x48/devices/pardus-mycomputer.png
 gtk-update-icon-cache /usr/share/icons/Windows-10-master/
 
 cp /usr/share/images/desktop-base/* /usr/share/backgrounds/
